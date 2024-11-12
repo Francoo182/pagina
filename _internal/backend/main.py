@@ -37,7 +37,10 @@ app.include_router(workers.router)
 app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "../web")), name="static")
 
 # Directorio de plantillas (HTML dinámico)
-templates = Jinja2Templates(directory="web")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TEMPLATES_DIR = os.path.join(BASE_DIR, "web")
+
+templates = Jinja2Templates(directory=TEMPLATES_DIR)
 
 @app.get("/")
 async def read_index(request: Request):
