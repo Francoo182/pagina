@@ -1,6 +1,6 @@
 // auth.js
 
-const BASE_URL = 'http://127.0.0.1:8000/auth';
+const BASE_URL = 'https://pagina-sbkm.onrender.com/auth';
 
 // Manejo del formulario de login
 const loginForm = document.getElementById('login-form');
@@ -31,7 +31,7 @@ if (loginForm) {
             // Redirigir al usuario según su rol
             const userRole = data.rol;
             const redirectMap = {
-                'cliente': 'cliente.html',
+                'cliente': 'cliente',
                 'secretaria': 'secretaria.html',
                 'duena': 'duena.html',
                 'masajista': 'masajista.html'

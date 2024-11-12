@@ -46,6 +46,14 @@ templates = Jinja2Templates(directory=TEMPLATES_DIR)
 async def read_index(request: Request):
     # Puedes pasar datos dinámicos al template
     return templates.TemplateResponse("index3.html", {"request": request, "message": "Bienvenido a Spa Sentirse Bien"})
+@app.get("/login")
+async def read_index(request: Request):
+    # Puedes pasar datos dinámicos al template
+    return templates.TemplateResponse("login.html", {"request": request, "message": "Bienvenido a Spa Sentirse Bien"})
+@app.get("/cliente")
+async def read_index(request: Request):
+    # Puedes pasar datos dinámicos al template
+    return templates.TemplateResponse("cliente.html", {"request": request, "message": "Bienvenido a Spa Sentirse Bien"})
 def main():
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)

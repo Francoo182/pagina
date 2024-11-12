@@ -1,9 +1,9 @@
 // cliente.js (optimizado)
 
 // Base URL de la API (ajusta según el entorno de producción si es necesario)
-const BASE_URL = 'http://127.0.0.1:8000/client'; // Cambia '127.0.0.1' según la IP o el dominio en producción
-const BASE_URL2= 'http://127.0.0.1:8000/reservas'
-const BASE_URL3= 'http://127.0.0.1:8000/reservas2'
+const BASE_URL = 'https://pagina-sbkm.onrender.com/client'; // Cambia '127.0.0.1' según la IP o el dominio en producción
+const BASE_URL2= 'https://pagina-sbkm.onrender.com/reservas'
+const BASE_URL3= 'https://pagina-sbkm.onrender.com/reservas2'
 // Función para mostrar mensajes de error
 function mostrarError(elemento, mensaje) {
     elemento.innerText = mensaje;
@@ -77,35 +77,3 @@ document.getElementById('agendar-form').addEventListener('submit', async (e) => 
         mostrarError(errorElemento, error.message);
     }
 });
-
-// Realizar pago
-// document.getElementById('pago-form').addEventListener('submit', async (e) => {
-//     e.preventDefault();
-
-//     const monto = parseFloat(document.getElementById('monto').value);
-//     const metodoPago = document.getElementById('metodo-pago').value;
-//     const errorElemento = document.getElementById('pago-error');
-
-//     errorElemento.style.display = 'none'; // Ocultar mensaje de error
-
-//     const token = localStorage.getItem('token');
-//     try {
-//         const response = await fetch(`${BASE_URL}/pagos`, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': `Bearer ${token}`
-//             },
-//             body: JSON.stringify({ monto, metodoPago })
-//         });
-
-//         if (!response.ok) {
-//             throw new Error('Error al realizar el pago.');
-//         }
-
-//         // Pago realizado exitosamente
-//         alert('Pago realizado con éxito.');
-//     } catch (error) {
-//         mostrarError(errorElemento, error.message);
-//     }
-// });
