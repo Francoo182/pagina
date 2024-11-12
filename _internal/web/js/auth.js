@@ -1,6 +1,6 @@
 // auth.js
 
-const BASE_URL = 'https://pagina-sbkm.onrender.com/auth';
+const BASE_URL = 'https://test-rvwm.onrender.com/auth';
 
 // Manejo del formulario de login
 const loginForm = document.getElementById('login-form');
@@ -32,14 +32,14 @@ if (loginForm) {
             const userRole = data.rol;
             const redirectMap = {
                 'cliente': 'cliente',
-                'secretaria': 'secretaria.html',
-                'duena': 'duena.html',
-                'masajista': 'masajista.html'
+                'secretaria': 'secretaria',
+                'duena': 'duena',
+                'masajista': 'masajista'
             };
 
             window.location.href = redirectMap[userRole] || 'login.html';
         } catch (error) {
-            mostrarError(errorElemento, error.message);
+            console.log(errorElemento, error.message);
         }
     });
 }
